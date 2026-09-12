@@ -10,7 +10,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons/apple-touch-icon.png'],
+      includeAssets: ['icons/apple-touch-icon.png', 'icons/favicon-16.png', 'icons/favicon-32.png'],
       manifest: {
         name: 'Control de Presión Arterial',
         short_name: 'Presión',

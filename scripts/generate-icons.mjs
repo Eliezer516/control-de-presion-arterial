@@ -134,6 +134,8 @@ const targets = [
   ['icon-512.png', 512],
   ['icon-maskable-512.png', 512],
   ['apple-touch-icon.png', 180],
+  ['favicon-16.png', 16],
+  ['favicon-32.png', 32],
 ]
 
 for (const [name, size] of targets) {
