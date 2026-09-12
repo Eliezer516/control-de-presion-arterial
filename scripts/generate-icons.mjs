@@ -75,7 +75,7 @@ function drawIcon(size) {
   const SS = 4 // supersampling factor (4x4)
   const heartScale = size * 0.27
   const cx = size / 2
-  const cy = size * 0.56
+  const cy = size * 0.523
   const shadowDx = size * 0.05
   const shadowDy = size * 0.06
 
@@ -84,7 +84,9 @@ function drawIcon(size) {
     for (let sy = 0; sy < SS; sy++) {
       for (let sx = 0; sx < SS; sx++) {
         const ux = ((px + (sx + 0.5) / SS) - cx) / (heartScale * scale)
-        const uy = (((py + (sy + 0.5) / SS) - cy) / (heartScale * scale)) * 1.15
+        // Invert Y: screen py grows downward, but the heart equation has its
+        // lobes on positive Y. Flipping keeps the point of the heart at the bottom.
+        const uy = ((cy - (py + (sy + 0.5) / SS)) / (heartScale * scale)) * 1.15
         if (heartInside(ux, uy)) inside++
       }
     }
